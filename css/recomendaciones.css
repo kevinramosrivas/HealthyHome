@@ -1,0 +1,220 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+	padding: 0px;
+	margin:0px;
+	box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+.portada-container-cover{
+    width: 100%;
+    height: 500px;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portada_info{
+    padding: 20px;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(../img/salud\ fisica.jpg);
+    border-radius: 30px;
+    opacity:0.8;
+    text-shadow:2px 2px #272727 ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.portada_info h1{
+    font-size: 60px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.portada_info p{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/*Contenedor de categorias*/
+
+input[type="radio"]{
+    display: none;
+}
+
+.container-category{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.container-category label{
+    padding: 6px 40px;
+    margin: 10px;
+    font-size: 20px;
+    background: #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-category label:hover{
+    opacity: 0.8;
+}
+
+
+
+/*Post - Publicaciones*/
+
+.container-post{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.posts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.posts .post{
+    background: #fff;
+    box-shadow: 0 0 20px -20px black;
+    border-radius: 6px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.post .ctn-img{
+    width: 100%;
+}
+
+.post .ctn-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post h2{
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.post span{
+    display: block;
+    margin-top: 10px;
+    padding: 0px 20px;
+}
+
+.ctn-tag{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.ctn-tag li{
+    list-style: none;
+    font-size: 14px;
+    margin: 4px;
+    padding: 6px 10px;
+    background: #e8e8e8;
+    cursor: default;
+}
+
+
+.post button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 50px;
+    font-size: 16px;
+    background: #717171;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.post button:hover{
+    opacity: 0.9;
+}
+
+
+/*sistema de filtrado*/
+
+[value="TODOS"]:checked ~ .posts .post[data-category]{
+    display: block;
+}
+
+[value="ECTOMORFO"]:checked ~ .posts .post:not([data-category~="ECTOMORFO"]),
+[value="MESOMORFO"]:checked ~ .posts .post:not([data-category~="MESOMORFO"]),
+[value="ENDOMORFO"]:checked ~ .posts .post:not([data-category~="ENDOMORFO"]){
+    display: none;
+}
+
+[value="TODOS"]:checked ~ .container-category [for="TODOS"],
+[value="ECTOMORFO"]:checked ~ .container-category [for="ECTOMORFO"],
+[value="MESOMORFO"]:checked ~ .container-category [for="MESOMORFO"],
+[value="ENDOMORFO"]:checked ~ .container-category [for="ENDOMORFO"]{
+    background: #02FFC9;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 1200px){
+    .posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .portada_info h1{
+        font-size: 40px;
+            
+     }    
+    .portada_info p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 580px){
+    .logo img{
+        height: 40px;
+    }
+    .portada-container-cover{
+        height: 400px;
+    }
+    .posts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .portada_info h1{
+        font-size: 20px;
+            
+     }    
+    .portada_info p{
+        font-size: 15px;
+    }
+}
