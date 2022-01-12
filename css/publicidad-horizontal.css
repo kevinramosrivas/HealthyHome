@@ -1,0 +1,27 @@
+/* publicidad - horizontal */
+.img-publ-horizontal{
+    display: flex;
+    margin-left: 12%;
+    margin-right: 12%;
+    justify-content: center;
+    background-size: cover;
+}
+
+.img-publ-horizontal .pub-hor1 img,
+.img-publ-horizontal .pub-hor2 img,
+.img-publ-horizontal .pub-hor3 img{
+    /* height: 25%; */
+    width: 95%;
+    height: 45vh;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
+
+a{
+    text-decoration: none !important;
+    color: black;
+}
+
+a div{
+    width: 85%;
+}
